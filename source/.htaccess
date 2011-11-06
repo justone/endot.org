@@ -3,9 +3,9 @@ ErrorDocument 404 /404.html
 ErrorDocument 403 /403.html
 
 RewriteEngine On
-RewriteRule ^(feed|atom)/ http://endot.org/atom.xml [R=301]
-RewriteRule ^feed$ http://endot.org/atom.xml [R=301]
-RewriteRule ^index.rdf http://endot.org/atom.xml [R=301]
+RewriteRule ^(feed|atom)/ /atom.xml [R=301]
+RewriteRule ^feed$ /atom.xml [R=301]
+RewriteRule ^index.rdf /atom.xml [R=301]
 
 # Protect this file
 <Files .htaccess>
