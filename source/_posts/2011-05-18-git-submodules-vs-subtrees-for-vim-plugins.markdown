@@ -44,7 +44,9 @@ After trying both out on a branch in my repository, I settled on using subtrees.
 
 For instance, to add <a href="https://github.com/tpope/vim-fugitive">vim-fugitive</a> (another by Mr. Pope), all I ran was this command:
 
+```
 git subtree add --prefix .vim/bundle/vim-fugitive https://github.com/tpope/vim-fugitive.git master --squash
+```
 
 This results in a single commit that contains the squashed history of the vim-fugitive plugin and a merge commit which merges that squashed commit into my repository.  Here's what that looks like on github: <a href="https://github.com/justone/dotfiles/commit/ad19e0209a4a262153f0590b8707eac74e809649">ad19e02</a>.
 
@@ -52,6 +54,8 @@ After that merge, the vim-fugitive files are now part of my repository.  No ext
 
 While I was writing this, I noticed that there have been a few more commits on the main fugitive repo, so I ran the following command to merge in those changes:
 
+```
 git subtree pull --prefix .vim/bundle/vim-fugitive https://github.com/tpope/vim-fugitive.git master --squash
+```
 
 It all works quite well.  As of this post I have eleven plugins managed with subtrees and it only takes a couple seconds to clone my entire repo onto a new machine or VM.

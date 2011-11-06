@@ -21,7 +21,7 @@ I get miserable.  What this usually means is that my nose needs to be emptied o
 
 Anyway, that's not why I wanted to post today.
 
-Today, I went to Home Depot.  If you knew me at all, you would know this is a rarity.  I am much more likely to be found at an Apple store.  It wasn't a particularly comfortable experience.  My dad would be comfortable in Home Depot.*  He's done some level of remodeling in each home my parents have owned and he was the main force behind the recent addition to their current house.  So he's the kind of guy who would walk in and go directly to the right aisle, pay and be back out in five minutes instead of wandering around until someone asks if he's in the right store.  He's awesome.
+Today, I went to Home Depot.  If you knew me at all, you would know this is a rarity.  I am much more likely to be found at an Apple store.  It wasn't a particularly comfortable experience.  My dad would be comfortable in Home Depot[^1].  He's done some level of remodeling in each home my parents have owned and he was the main force behind the recent addition to their current house.  So he's the kind of guy who would walk in and go directly to the right aisle, pay and be back out in five minutes instead of wandering around until someone asks if he's in the right store.  He's awesome.
 
 I went to Home Depot for a very specific purpose.
 
@@ -31,4 +31,4 @@ That's not why I wanted to post today either.
 
 I wanted to post today because posting is good for my writing muscles.  And I need to exercise them.  And just like the first run after not getting out for a while, it's not going to be my best work.  But at least I've got my shoes on again.
 
-* Come to think of it, he'd probably be comfortable in an Apple store too.
+[^1]: Come to think of it, he'd probably be comfortable in an Apple store too.
