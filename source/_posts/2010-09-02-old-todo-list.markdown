@@ -12,7 +12,8 @@ categories:
 
 In trying to finish transitioning from my old backup drive to my new <a href="http://endot.org/2010/03/14/my-mini-thumper-is-online/">backup mini thumper</a>, I ran across a file with this content:
 
-[sourcecode gutter="false" language="plain"]-take car in to get checked
+``` plain
+-take car in to get checked
 -order lion king tickets
 -clean room
 +do laundry
@@ -20,7 +21,8 @@ In trying to finish transitioning from my old backup drive to my new <a href="ht
  continue working on g4g saap psd
  write more for guestlist application
  call mom
-[/sourcecode]
+
+```
 
 It's an old todo list.  The modification date on the file is 8/10/02. Yup, exactly 8 years before my <a href="http://baby.joneses.us/">daughter was born</a>.
 

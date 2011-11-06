@@ -18,25 +18,27 @@ I generated 2, 4, 6, 8, and 10 plugin repositories for both submodules and subtr
 
 As you can see, submodules take longer for each one you add and subtrees stay pretty much the same.  Here's the R code to generate the above graph:
 
-[sourcecode gutter="false" language="r"]#!/usr/bin/env Rscript
+``` r
+#!/usr/bin/env Rscript
 
 library(ggplot2) # load up the ggplot2 library
 
 # load up the data from the google csv export
-smst &lt;- read.csv('data.csv')
+smst <- read.csv('data.csv')
 
 # add names to the data
-names(smst) &lt;- c('type', 'count', 'time')
+names(smst) <- c('type', 'count', 'time')
 
 # force count to be a factor instead of a continuous variable
-smst$count &lt;- factor(smst$count)
+smst$count <- factor(smst$count)
 
 # calculate the mean for each type/count group
-smst_mean &lt;- aggregate(list(time=smst$time), list(type=smst$type, count=smst$count), mean)
+smst_mean <- aggregate(list(time=smst$time), list(type=smst$type, count=smst$count), mean)
 
-png(filename = &quot;submodule_vs_subtree.png&quot;, width=700, height=700)
+png(filename = "submodule_vs_subtree.png", width=700, height=700)
 
-ggplot(smst_mean, aes(x=count, y=time, group=type, color=type)) + geom_line(size = 2) + ylab(&quot;time&quot;) + xlab(&quot;plugin count&quot;) + opts(title = &quot;Submodule vs. Subtree checkout times&quot;)
-[/sourcecode]
+ggplot(smst_mean, aes(x=count, y=time, group=type, color=type)) + geom_line(size = 2) + ylab("time") + xlab("plugin count") + opts(title = "Submodule vs. Subtree checkout times")
+
+```
 
 The generation and benchmarking scripts as well as the reported data and code are in <a href="https://github.com/justone/submodule_vs_subtree">my submodule_vs_subtree repo on github</a>.

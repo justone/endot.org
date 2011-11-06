@@ -26,7 +26,9 @@ The test suite covers all the new commands and I added more coverage for the lig
 
 To update to the latest, just run these commands:
 
-[sourcecode gutter="false" language="plain"]$ dfm remote add upstream git://github.com/justone/dotfiles.git
-$ dfm pull upstream master[/sourcecode]
+``` plain
+$ dfm remote add upstream git://github.com/justone/dotfiles.git
+$ dfm pull upstream master
+```
 
 Enjoy.

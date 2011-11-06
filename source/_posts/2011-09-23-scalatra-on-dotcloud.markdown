@@ -18,7 +18,8 @@ The sbt-scalatra-example project combines two great technologies.  The first is
 
 The biggest thing I had to figure out is that as of version 0.10 of sbt, <a href="https://github.com/harrah/xsbt/wiki/Migrating-from-SBT-0.7.x-to-0.10.x">web application support is now</a> in the <a href="https://github.com/siasia/xsbt-web-plugin">xsbt-web-plugin</a> plugin.  Just knowing that would have saved me an hour this morning. Setting that up and tweaking a few other files means I can now do this:
 
-[sourcecode gutter="false" language="plain"]$ sbt clean package-war
+``` plain
+$ sbt clean package-war
 ... snip ...
 [info] Packaging /home/user/sbt-scalatra-example/target/scala-2.9.1.final/sbt-scalatra-example.war ...
 [info] Done packaging.
@@ -27,12 +28,13 @@ The biggest thing I had to figure out is that as of version 0.10 of sbt, <a href
 $ cp target/scala-2.9.1.final/sbt-scalatra-example.war dotcloud/ROOT.war
 
 $ dotcloud create sbtscalatra
-Created application &quot;sbtscalatra&quot;
+Created application "sbtscalatra"
 
-$ cd dotcloud &amp;&amp; dotcloud push sbtscalatra
+$ cd dotcloud && dotcloud push sbtscalatra
 ... snip ...
 Deployment finished. Your application is available at the following URLs
-www: http://sbtscalatra-xxx.dotcloud.com/[/sourcecode]
+www: http://sbtscalatra-xxx.dotcloud.com/
+```
 
 Of course, this assumes you've installed sbt (brew install sbt on the mac) and signed up and configured Dotcloud.
 

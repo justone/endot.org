@@ -29,18 +29,24 @@ That's all you need to undo almost anything you might have done.  This command 
 
 For instance, if you want to revert a branch back to where it was at the last fetch:
 
-[sourcecode gutter="false"]$ git reset --hard origin/branchname[/sourcecode]
+```
+$ git reset --hard origin/branchname
+```
 
 Or, if you decide that the last three commits should be forgotten:
 
-[sourcecode gutter="false"]$ git reset --hard HEAD~3[/sourcecode]
+```
+$ git reset --hard HEAD~3
+```
 
 Or, if you don't like the result of that interactive rebase:
 
-[sourcecode gutter="false"]$ git branch before
+```
+$ git branch before
 $ git rebase -i HEAD~3
 # decide the rebase was bad
-git reset --hard before # all better[/sourcecode]
+git reset --hard before # all better
+```
 
 <strong>Don't be afraid to experiment.</strong>
 

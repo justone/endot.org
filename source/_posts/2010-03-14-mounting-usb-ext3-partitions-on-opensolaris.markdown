@@ -19,24 +19,29 @@ Now that I finally got <a href="/2010/03/14/my-mini-thumper-is-online/">my mini 
 
 My only problem was that when I ran prtpart, it only showed disk information for my non-USB drives.  I could see that the drive was recognized by looking in syslog:
 
-[sourcecode gutter="false"]root@silo:~# cat /var/adm/messages
+```
+root@silo:~# cat /var/adm/messages
 Mar 14 12:03:36 silo usba: [ID 349649 kern.info]        SanDisk U3 Cruzer Micro 0774920CB281D664
 Mar 14 12:03:36 silo genunix: [ID 936769 kern.info] scsa2usb0 is /pci@0,0/pci1462,7418@1d,3/storage@1
 ...
-[/sourcecode]
+
+```
 
 So, I dug around a bit, trying to look for various names in /dev/rdsk that were in the above output when I stumbled across the fact that everything in /dev/rdsk is a symlink.  So I did a quick grep:
 
-[sourcecode gutter="false"]
+```
+
 root@silo:~# ls -al /dev/rdsk/ | grep /pci@0,0/pci1462,7418@1d,3/storage@1
-lrwxrwxrwx   1 root root  64 2010-03-14 12:03 c11t0d0p0 -&gt; ../../devices/pci@0,0/pci1462,7418@1d,3/storage@1/disk@0,0:q,raw
-lrwxrwxrwx   1 root root  64 2010-03-14 12:03 c11t0d0p1 -&gt; ../../devices/pci@0,0/pci1462,7418@1d,3/storage@1/disk@0,0:r,raw
+lrwxrwxrwx   1 root root  64 2010-03-14 12:03 c11t0d0p0 -> ../../devices/pci@0,0/pci1462,7418@1d,3/storage@1/disk@0,0:q,raw
+lrwxrwxrwx   1 root root  64 2010-03-14 12:03 c11t0d0p1 -> ../../devices/pci@0,0/pci1462,7418@1d,3/storage@1/disk@0,0:r,raw
 ....
-[/sourcecode]
+
+```
 
 Aha! Now I know what the device name is, so I can use prtpart to figure out what to mount:
 
-[sourcecode gutter="false"]root@silo:~# prtpart /dev/rdsk/c11t0d0p0 -ldevs
+```
+root@silo:~# prtpart /dev/rdsk/c11t0d0p0 -ldevs
 Fdisk information for device /dev/rdsk/c11t0d0p0
 
 ** NOTE **
@@ -47,12 +52,15 @@ Fdisk information for device /dev/rdsk/c11t0d0p0
 Virtual device names can be used to access EXT2 and NTFS on logical partitions
 
 /dev/dsk/c11t0d0p1      Linux native
-[/sourcecode]
+
+```
 
 And mount it:
 
-[sourcecode gutter="false"]root@silo:~# mkdir /mnt/linux
+```
+root@silo:~# mkdir /mnt/linux
 root@silo:~# mount -F ext2fs /dev/dsk/c11t0d0p1 /mnt/linux
 root@silo:~# ls /mnt/linux/
 bin  dev  etc  home  initrd  lib  lost+found  media  mnt  proc  root  sbin  sys  tmp  usr  var  www
-[/sourcecode] 
+
+``` 
