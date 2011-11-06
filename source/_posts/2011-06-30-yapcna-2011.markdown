@@ -1,0 +1,29 @@
+---
+author: nate
+date: '2011-06-30 07:54:03'
+layout: post
+slug: yapcna-2011
+status: publish
+title: YAPC::NA 2011
+wordpress_id: '270'
+categories:
+- Misc
+---
+
+I'm about to finish up my time here in beautiful North Carolina.  The rental car is returned and I'm waiting for my plane to arrive and take me back to the west coast.  It's been a week chock full of great information.  It's a good thing that the conference was only three days long though, my brain is tired.
+
+It's going to take a while to process all the new data I have, but here are three highlights:
+
+<a href="http://beta.metacpan.org/module/Module::Package"><strong>Module::Package</strong></a>
+
+This was part of Ingy's <a href="http://www.yapc2011.us/yn2011/talk/3338">Postmodern Module Packaging</a>.  It's a module that enables bundling together Module::Install tasks into reusable chunks.  I think it's finally time for me to learn how to use this system.
+
+<a href="http://www.yapc2011.us/yn2011/talk/3294"><strong>Deploying PSGI applications</strong></a>
+
+Miyagawa himself gave this talk, with an extra serving of enthusiasm about the tools that have grown up around his interface.  He finished off with a demo of <a href="https://github.com/miyagawa/Plack-Middleware-InteractiveDebugger">Plack::Middleware::InteractiveDebugger</a>, which can pop up a little REPL in the browser window at any level of the stacktrace of an application error.
+
+<a href="http://www.yapc2011.us/yn2011/talk/3305"><strong>Pimp your Mac with Perl</strong></a>
+
+I'm quite a fan of optimizing my workspace and this talk was fuel for the fire.  It was only 20 minutes long, so most of the information is on the <a href="http://pimpyourmacwithperl.com/">companion website</a>.
+
+That's it for now.  I'll post more as I keep processing...

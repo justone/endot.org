@@ -1,0 +1,17 @@
+---
+author: nate
+date: '2007-09-18 08:47:31'
+layout: post
+slug: magsafe
+status: publish
+title: MagSafe?
+wordpress_id: '17'
+categories:
+- Misc
+---
+
+So, I got a new Macbook Pro, and I must say that the MagSafe power cable is neat.
+
+Funny thing is, every once in a while, when my mind is otherwise occupied, I find myself disconnecting and reconnecting the cable.  Not because someone's tripped over the cord, but because magnets are cool.
+
+I doubt the Apple engineers had that in mind.

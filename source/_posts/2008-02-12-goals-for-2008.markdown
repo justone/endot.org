@@ -1,0 +1,26 @@
+---
+author: nate
+date: '2008-02-12 21:01:39'
+layout: post
+slug: goals-for-2008
+status: publish
+title: Goals for 2008
+wordpress_id: '34'
+categories:
+- Blog
+- Lifehack
+---
+
+As promised <a href="http://endot.org/2008/01/27/on-organizing/">earlier</a>, here are the goals I have set before myself to complete by the end of 2008:
+
+<strong>Run 500 miles</strong> - Yup, that's right. I plan on running five hundred miles this year. I've often called myself a running rhinocerous in comparison to my gazelle of a <a href="http://sara.joneses.us/">wife</a>, but my last run (a half marathon in San Jose) helped me to finally get over the "less than totally enjoyable" experience I had during my first marathon and consider long distance running a sport I can do.
+
+Plus, I received a <a href="http://en.wikipedia.org/wiki/Nike%2BiPod">Nike+</a> kit for Christmas. I'm quite enjoying all the statistics and graphs that can be generated from this little accelerometer. I gleefully race to my computer after each run to upload my data and check on my progress. As one <a href="http://serialized.net/">friend</a> put it, it turns running into a video game.  I've joined the <a href="http://www.runnerplus.com/">Runner+</a> community, an offshoot of the official <a href="http://nikeplus.nike.com/nikeplus/">Nike+</a> site that's a little lighter on flash and allows more control over your data.  My profile page is <a href="http://www.runnerplus.com/people/justone">here</a>, and I plan on adding a stats section to the side bar at some point. I started the year off a little slow, but this week I should set myself back on pace to make 500 by December 31st.
+
+<strong>Run a marathon and a half marathon</strong> - There's no way I can keep up running unless I have some larger goal to work toward. Sara and I have registered for the San Diego Rock and Roll Marathon on June 1st. It'll be her fifth and my second, and we're both hoping it'll be a better experience than the first one we ran together (90+ degrees on hot L.A. asphalt).  We'll probably do the San Jose Rock &amp; Roll again in October so this goal is pretty much planned for.  All that's left is the training.
+
+<strong>Write one blog post each week</strong> - I really enjoy writing.  I like finding just the right word to express each idea.  I pore over my prose like a gardener, tenderly cultivating it until each sentence and paragraph flows just right and the thought that's in my head comes through as clearly as possible.  The only problem is, I don't do it enough.  Good writing takes discipline.  It means sitting down and making it your primary task.  Therefore, I commit to writing at least one blog post a week.  Something more than a funny picture or a witty link.  It should be me sharing a part of myself in written form.
+
+There are many other ways I want to improve myself (becoming more organized, reading for fun more, carving time out for my personal programming projects, etc.), but this will have to do as far as measurable goals.
+
+What are some of your goals for 2008?
