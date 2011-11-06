@@ -28,6 +28,6 @@ I haven't created any plugins (yet) for jQuery, but after this talk I not only h
 
 This was, by far, the most entertaining talk of the weekend. Not only did I learn about the cool new unified event declaration model that's coming in jQuery 1.7, I got a refresher course on all the memes I have and haven't seen.
 
-There was quite a bit more from the weekend.  Here are my <a href="http://endot.org/wp-content/uploads/2011/10/jqcon-boston-2011.txt">raw notes</a>, with many many URLs to explore.
+There was quite a bit more from the weekend.  Here are my <a href="/uploads/2011/10/jqcon-boston-2011.txt">raw notes</a>, with many many URLs to explore.
 
 All in all, it was a great trip.

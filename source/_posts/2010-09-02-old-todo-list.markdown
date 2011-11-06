@@ -10,7 +10,7 @@ categories:
 - Really Random
 ---
 
-In trying to finish transitioning from my old backup drive to my new <a href="http://endot.org/2010/03/14/my-mini-thumper-is-online/">backup mini thumper</a>, I ran across a file with this content:
+In trying to finish transitioning from my old backup drive to my new <a href="/2010/03/14/my-mini-thumper-is-online/">backup mini thumper</a>, I ran across a file with this content:
 
 ``` plain
 -take car in to get checked

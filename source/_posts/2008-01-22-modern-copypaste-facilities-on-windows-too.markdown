@@ -10,7 +10,7 @@ categories:
 - Misc
 ---
 
-A little while ago, I wrote about my favorite utility <a href="http://endot.org/2007/11/03/pthpasteboard-the-lazy-mans-memory/">PTHPasteboard</a>, and I wondered if there was a similar facility for those in the Windows world.
+A little while ago, I wrote about my favorite utility <a href="/2007/11/03/pthpasteboard-the-lazy-mans-memory/">PTHPasteboard</a>, and I wondered if there was a similar facility for those in the Windows world.
 
 <a href="http://www.codinghorror.com/">Jeff Atwood</a> answered my question <a href="http://www.codinghorror.com/blog/archives/001041.html">yesterday</a>.
 

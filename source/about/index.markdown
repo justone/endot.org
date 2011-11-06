@@ -8,7 +8,7 @@ title: About Me
 wordpress_id: '2'
 ---
 
-<img src="http://endot.org/wp-content/uploads/2007/07/img_1638.JPG" title="img_1638.JPG" alt="img_1638.JPG" align="left" />My name is Nate.
+<img src="/uploads/2007/07/img_1638.JPG" title="img_1638.JPG" alt="img_1638.JPG" align="left" />My name is Nate.
 
 That's me, with my wife Sara somewhere up the coast of California.
 

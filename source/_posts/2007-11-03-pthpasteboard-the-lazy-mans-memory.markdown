@@ -18,7 +18,7 @@ I'm lazy.  I don't like using my mouse very much.  I don't even like using my ke
 
 I've configured mine so that Shift-Command-V will paste the second to last thing on the stack and Control-Command-V will past the third to last.  Also, Alt-Command-V causes the PTHPasteboard to slide out onto my screen so that I can pick any of the last 100 clipboard items:
 
-<a href="http://endot.org/wp-content/uploads/2007/11/pthpasteboard_config.png" title="PTHPasteboard config"><img src="http://endot.org/wp-content/uploads/2007/11/pthpasteboard_config.thumbnail.png" alt="PTHPasteboard config" /></a>
+<a href="/uploads/2007/11/pthpasteboard_config.png" title="PTHPasteboard config"><img src="/uploads/2007/11/pthpasteboard_config.thumbnail.png" alt="PTHPasteboard config" /></a>
 
 How is this useful?
 

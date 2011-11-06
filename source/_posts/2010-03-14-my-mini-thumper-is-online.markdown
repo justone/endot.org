@@ -15,11 +15,11 @@ After basically copying <a href="http://serialized.net/2009/02/the-littlest-thum
 
 Most of the assembly went smoothly.  You do have to pull the motherboard out to get the CF drive into its slot.  In order to maneuver it out, you have to unclip the SATA cables and unscrew the VGA connector.
 
-<a href="http://endot.org/wp-content/uploads/2010/03/case.jpg"><img class="alignnone size-medium wp-image-147" title="case" src="http://endot.org/wp-content/uploads/2010/03/case-300x225.jpg" alt="case" width="300" height="225" /></a>
+<a href="/uploads/2010/03/case.jpg"><img class="alignnone size-medium wp-image-147" title="case" src="/uploads/2010/03/case-300x225.jpg" alt="case" width="300" height="225" /></a>
 
 You can see the SATA cables snaking up the left and top and the VGA connector is in the lower right (blue).  The CF slot is just left of center at the bottom of the picture.  Here's a picture with the drive and RAM installed.
 
-<a href="http://endot.org/wp-content/uploads/2010/03/case2.jpg"><img class="alignnone size-medium wp-image-148" title="case2" src="http://endot.org/wp-content/uploads/2010/03/case2-300x225.jpg" alt="case2" width="300" height="225" /></a>
+<a href="/uploads/2010/03/case2.jpg"><img class="alignnone size-medium wp-image-148" title="case2" src="/uploads/2010/03/case2-300x225.jpg" alt="case2" width="300" height="225" /></a>
 
 The other issue I ran into was related to the optical drive bay.  My first drive slid in and mounted fine in the HD bay, but I was stuck without brackets to properly secure the second drive in the 5.25 inch bay.  I could have just put it in and held it with one screw, but after figuring that this is my backup server, I opted to head to Best Buy to pick up the brackets.
 
