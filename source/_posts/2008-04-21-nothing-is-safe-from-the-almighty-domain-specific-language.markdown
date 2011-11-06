@@ -15,29 +15,33 @@ What <a href="http://rubyonrails.com/">Ruby on Rails</a> is to web programming,
 and <a href="http://www.capify.org/">Capistrano</a> is to deployment,
 
 now <a href="http://gadgets.inventivelabs.com.au/castanaut">Castanaut</a> is to screencasts:
-[ruby]#!/usr/bin/env castanaut
 
-plugin &quot;safari&quot;
-plugin &quot;mousepose&quot;
-plugin &quot;ishowu&quot;
+``` ruby
+#!/usr/bin/env castanaut
 
-launch &quot;Mousepose&quot;
+plugin "safari"
+plugin "mousepose"
+plugin "ishowu"
 
-launch &quot;Safari&quot;, at(20, 40, 1024, 768)
-url &quot;http://gadgets.inventivelabs.com.au&quot;
+launch "Mousepose"
+
+launch "Safari", at(20, 40, 1024, 768)
+url "http://gadgets.inventivelabs.com.au"
 
 ishowu_set_region at(4, 24, 1056, 800)
 ishowu_start_recording
 
-while_saying &quot;
+while_saying "
   Tabulate is a bookmarklet developed by Inventive Labs.
   You use it to open links on a web page.
   It's meant for iPhones, but we'll demonstrate it in Safari 3.
-&quot; do
+" do
   move to(240, 72)
   tripleclick
-  type &quot;http://gadgets.inventivelabs.com.au/tabulate&quot;
+  type "http://gadgets.inventivelabs.com.au/tabulate"
   hit Enter
   pause 2
-end[/ruby]
+end
+```
+
 So cool.

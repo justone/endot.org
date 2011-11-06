@@ -17,6 +17,7 @@ With insight into why people don't read manuals and why features sell products:
 Also:
 
 <a href="http://www.jnd.org/dn.mss/simplicity_is_highly.html">http://www.jnd.org/dn.mss/simplicity_is_highly.html</a>
+
 <a href="http://www.joelonsoftware.com/uibook/chapters/fog0000000062.html">http://www.joelonsoftware.com/uibook/chapters/fog0000000062.html</a>
 
 From the Norman essay:
