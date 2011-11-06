@@ -1,0 +1,177 @@
+# jQuery mobile
+
+* slides: http://filamentgroup.com/lab/jquery_mobile_state_of_framework_2011/
+* FlipPics source on Github. 
+* filamentgroup.com/lab
+
+# jQuery UI (Ralph Whitbeck)
+
+* http://jqueryui.com/
+* http://jqueryui.com/demos/
+* https://github.com/RedWolves & https://github.com/RedWolves/Complex-UIs-with-jQueryUI
+* http://jsfiddle.net/RWhitbeck/ZyYFG/
+* scriptjunkie.com
+
+# Events (Julian Aubourg)
+
+* http://demo.creative-area.net/jqcon2011-boston/#1
+* $.Deferred() - http://api.jquery.com/category/deferred-object/
+* .pipe() (introduced in 1.6)
+* $.Callbacks
+* e.g. create Topic and map callback methods to detachable methods in $.Callbacks
+
+# Javascript testing (John Bender, http://johnbender.us/)
+
+* qunit or jasmine
+* state/timing is the biggest problem. 
+* unit is easier
+* uat is harder
+* timing: setTimeout is bad
+* refactor to events (transitionend)
+* ci - jasmine, JSTestDriver
+* fixtures? silly to copy the dom into the tests
+* solution: use real data, selenium and qunit.  unit tests injected at top of page.
+* dom replacement is how tests reset.  what about other app state/storage.  setup/teardown is the way.
+* check out: cisetup branch in https://github.com/johnbender/jquery-mobile
+* https://github.com/johnbender/presentation-jsinjs
+* slides: http://johnbender.github.com/presentation-jsinjs/
+
+# Plugin Best Practices (Ben Alman, http://benalman.com/)
+
+* https://github.com/cowboy/talks/blob/master/jquery-plugin-authoring.js
+* use IIFEs bit.ly/js-iife
+* return 'this' to be chainable
+* pass function to html() to modify contents of each element
+* generic template:
+
+      $.fn.myMethod = function() {
+        return this.each(function() {
+          // Your code goes here!
+        });
+      };
+
+* https://github.com/jquery/jquery-plugins/blob/master/docs/json.md
+* http://ajpiano.com/widgetfactory/ - plugins with state
+
+# jQuery .widget (Ryan Florence, http://ryanflorence.com/)
+
+* jQuery.widget( "namespace.widgetname", { other functions } );
+* $.hello() or $.hello('functionname', args);
+* second param (for three total) can be another widget to extend, good for setting defaults
+* IL: jQuery.ui.dialog.prototype.open.apply(this, arguments) jQuery will have a superApply
+* IL: wrap in IIFE to have private data for a method
+      open: (function() {
+          var last;
+      
+          return function() {
+          };
+      }())
+* PG: namespace doesn't get inserted into name on jQuery, it does show up inside jQuery.namespace
+* lifecycle functions: _create (one time setup) and _init (for each widget)
+* automatically have options set for you (even an 'option' function/getter/setter, but doesn't call _init)
+* events
+      melt: function (event) {
+        this._trigger('melt', event, {});
+      }
+* IL: in _init: this.element.bind('click' this.widgetName, ...);
+* event name is widgetfunction
+* slideshow widget: https://github.com/rpflorence/jquery-rf-slideshow
+* presentation: https://github.com/rpflorence/talks/tree/master/2011-10-01-jqcon-boston
+
+# jQuery Mobile Debugging (Mike Taylor, http://miketaylr.com)
+
+* works at Opera, they have dragonfly
+* alert, view-source
+* error consoles 
+* actual tools (Firebug, Dragonfly, F12 for IE, etc.)
+* TIP: http://fixingthesejquery.com/ - debugging jquery apps
+* remote debugging: Socketbug, Weinre, Dragonfly
+* webkit has its own debugging protocol in trunk. PlayBook webkit is the only one has it now
+* Dragonfly works in Opera only, uses SCOPE protocol
+
+# jQueryUI keynote
+
+* http://blog.jqueryui.com/
+* http://view.jqueryui.com/ for viewing from github
+* docs.jquery.com/UI
+* https://github.com/scottgonzalez/widget-factory-docs - new widget docs
+* http://wiki.jqueryui.com/Roadmap
+* http://wiki.jqueryui.com/Grid
+* https://github.com/jquery/globalize - http://wiki.jqueryui.com/Globalize
+
+# QuickUI (Jan Miksovsky)
+
+* https://github.com/JanMiksovsky/quickui
+
+# jQueryUI Grid (Jörn Zaefferer, http://bassistance.de/)
+
+* http://wiki.jqueryui.com/Grid
+
+# jQuery events in 1.7 (Dave Methvin, https://github.com/dmethvin or http://methvin.com/ or https://twitter.com/#!/davemethvin)
+
+* slides: http://www.slideshare.net/dmethvin/jquery-17-events
+* on() and off()
+* on(event, selector, data, fn);
+* off(event, selector, fn);
+* don't use live anymore? use delegated on() as close as possible to the target
+
+# CouchDB apps with jQuery (Bradley Holt, http://bradley-holt.com/)
+
+* slides: http://bradley-holt.com/2011/10/couchapps-at-jquery-conference-boston-2011/
+* yay couchapps
+* http://www.couchbase.com/ - superset of couchdb, also mobile for ios and android (http://www.couchbase.org/get/couchbase-mobile-for-ios/current)
+* "crowd computing"
+* jquery.couch.js
+
+# Coffescript (Mark Bates, http://www.metabates.com/, https://github.com/markbates)
+
+* http://jashkenas.github.com/coffee-script/
+* syntax sugar on top of javascript, doesn't add language features
+* ranges, functions, the ? operator, string interpolation, => makes class methods detachable
+* http://www.slideshare.net/markykang/coffeescript-and-you-9510745
+* http://js2coffee.org/
+* https://github.com/guard/guard - to detect and react to FS events
+
+# Contextual jQuery in Practice (Doug Neiner, http://dougneiner.com/, https://github.com/dcneiner)
+
+* slides soon: http://speakerdeck.com/u/dougneiner/p/contextual-jquery-in-practice
+* http://www.slideshare.net/dcneiner/contextual-jquery (presentation from last year)
+* declarative, then dynamics, finally contextual (few onready selectors, delegated events)
+* like you spend money, only spend what you need
+* like you buy a car, weigh the difference between cost and quality
+* delegated events are powerful
+* responsible events, only fire when the user does something
+* IL: li:not(.widget-setup) selector and add class at the end
+* probable user action.  not click, mouseenter/mouseleave (closer, but some concerns, like speed)
+* use mouseenter/mouseleave with plugin: http://benalman.com/projects/jquery-dotimeout-plugin/
+* scrolling is another way to detect intent; jQuery Sonar and Waypoints
+* focus has high probability of intent; focusin/focusout
+* use deferred to handle initialization
+
+# Keynote (Yehuda Katz, https://twitter.com/#!/wycats)
+
+* bit.ly/ccfbro
+
+# Other
+
+* http://dl.dropbox.com/u/39519/talks/jquery-devtools/index.html - Paul Irish on Chrome web tools
+* http://t.co/VyorPd0v - geo with jQuery - http://www.slideshare.net/wndxlori/maps-and-scale
+* https://github.com/Modernizr/Modernizr
+* http://westcoastlogic.com/lawnchair/
+* http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js - source
+* https://gist.github.com/1253537 - Example JavaScript for working with HTML5 IndexedDB
+* http://www.timmywillison.com/pres/attributes/ - attributes and properties, also http://illcode.org/post/10919102053/on-attributes-and-properties
+* https://github.com/BorisMoore/jsrender/ - jsRender, also http://borismoore.github.com/jsrender/demos/step-by-step/index.html
+* http://impresariodigital.com/pub/jqcon-canvas/deck.html - canvas animation
+* http://speakerrate.com/events/1089-jquery-conference-2011-boston - speaker reviews
+* http://elijahmanor.github.com/talks/amplifyjs/ - amplify.js
+* http://code.bocoup.com/jquery-you-and-i/ - contributing to jQuery
+* http://benalman.com/projects/jquery-dotimeout-plugin/ - setTimeout that works
+* http://gnarf.net/special-fx/ - requestAnimationFrame (demo source: https://github.com/gnarf37/special-fx)
+* http://speakerdeck.com/u/antonkovalyov/p/achieving-harmony-with-third-party-javascript
+* http://t.co/IsXBr0Ib - dramatic jQuery bug readings
+* https://docs.google.com/spreadsheet/ccc?key=0AgHfcZfqtm67dE50amtpVzhHbUpvcC01SllHWlZIOGc&hl=en_US#gid=0 - presentation links
+* http://norabrown.tumblr.com/tagged/jqcon - someone else's notes
+
+IL: interesting line
+PG: possible gotcha
