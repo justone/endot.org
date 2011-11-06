@@ -6,7 +6,7 @@ require "stringex"
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
 ssh_user       = "endot.org@endot.org"
 ssh_port       = "22"
-document_root  = "~/domains/beta.endot.org/html/"
+document_root  = "~/domains/endot.org/html/"
 deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
