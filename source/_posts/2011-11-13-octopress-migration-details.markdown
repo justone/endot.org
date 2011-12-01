@@ -5,6 +5,7 @@ date: 2011-11-13 20:16
 status: publish
 comments: true
 categories: 
+- Blog
 ---
 
 As is customary for those who've converted from WordPress to Octopress, here's a quick post about my experience converting this blog.
