@@ -14,6 +14,7 @@ Things I started/maintain:
 <ul>
 	<li><a href="/projects/dfm/">dfm</a> - the dotfiles manager</li>
 	<li><a href="/projects/gitbackup/">Git::Backup</a> - easily backup your files with git</li>
+	<li><a href="/projects/remotecopy/">remotecopy</a> - easily copy data from remote terminals into your local clipboard</li>
 	<li><a href="http://github.com/mediatemple/get_var">get_var</a> - sane separation between production and development with puppet</li>
 </ul>
 Things I've contributed to:
