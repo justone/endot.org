@@ -7,7 +7,8 @@ status: publish
 title: dfm presentation at LA.pm
 wordpress_id: '288'
 categories:
-- Misc
+- Presentations
+- dfm
 ---
 
 A couple days ago, I did a presentation on my <a href="/2010/10/16/dfm-a-utility-to-manage-dotfiles/">dotfiles manager (dfm)</a> at the <a href="http://losangeles.pm.org/">local Perl Mongers</a> meeting.  It was a phenomenally rewarding experience.  The Perl community has always been fun and engaging and this meeting was no different.

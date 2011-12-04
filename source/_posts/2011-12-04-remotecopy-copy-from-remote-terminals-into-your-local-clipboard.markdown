@@ -6,6 +6,7 @@ comments: true
 categories: 
 - Code
 - Programming
+- remotecopy
 ---
 
 # Problem

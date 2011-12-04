@@ -9,6 +9,7 @@ wordpress_id: '234'
 categories:
 - Code
 - Computers
+- dfm
 ---
 
 After a few months of <a href="/2010/10/16/dfm-a-utility-to-manage-dotfiles/">managing my dotfiles with git</a>, I felt the need to organize my vim plugins a little better.  I chose to use <a href="https://github.com/tpope/vim-pathogen">pathogen</a> (created by <a href="http://tpo.pe/">Tim Pope</a>), which allows me to keep each plugin in its own subdirectory.  It fits well with using git to manage dotfiles because git has two ways of tracking content from other repositories.  The first is submodules, which keep a remote URL and commit SHA1 so that the other content can be pulled in after cloning.  The second is subtrees, which merges the history of the outside repository directly into a subdirectory.  Here's a quick list of the pros and cons of each strategy:

@@ -7,7 +7,8 @@ status: publish
 title: 'dfm updates: uninstall and updatemergeandinstall'
 wordpress_id: '298'
 categories:
-- Misc
+- Code
+- dfm
 ---
 
 In my <a href="/2011/09/23/dfm-presentation-at-la-pm/">dfm talk a couple weeks ago</a>, I listed out some <a href="http://speakerdeck.com/u/ndj/p/using-dfm?slide=35">low hanging fruit</a>; just a few things that I thought would be easy to add to the system.  Well, this past weekend, I went to the jQuery conference in Boston.  It was a great conference in its own right, and I hope to post on it this week, but for now I want to talk about the improvements I made to <a href="/projects/dfm/">dfm</a> while on the plane.

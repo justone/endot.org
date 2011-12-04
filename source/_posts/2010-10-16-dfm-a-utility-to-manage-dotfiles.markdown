@@ -10,6 +10,7 @@ categories:
 - Code
 - Computers
 - Programming
+- dfm
 ---
 
 I have quite a few dotfiles.  I have so many that keeping them in sync is impossible with conventional methods.  So, I turned to my old friend: version control.  For a while, I kept them in subversion at work.  This worked well as that was where I spent most of my time.  Recently, however, I've wanted those same dotfiles to be available at home and other non-work areas.  So, I investigated moving them over to a git repository.  Not only is git easier to set one up, but keeping multiple long running branches doesn't make you want to shoot something.
