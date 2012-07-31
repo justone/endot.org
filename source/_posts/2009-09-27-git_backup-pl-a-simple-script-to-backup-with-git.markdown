@@ -33,6 +33,6 @@ Now, when the backup is run, only the small changes are sent to the remote serve
 
 There are options for dumping database tables, changing the commit message and the remote that gets the push.  Running "git_backup.pl --man" will show all the options.
 
-The source is (of course) in a git repo: http://git.endot.org/git_backup.git
+The source is (of course) in a git repo: <https://github.com/justone/git_backup>
 
-The tree and history can be browsed at <a href="http://git.endot.org/">http://git.endot.org/</a>.
+**Update 2012-07-31:** Project repo moved to github.
