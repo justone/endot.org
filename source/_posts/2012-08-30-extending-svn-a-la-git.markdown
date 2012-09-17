@@ -55,7 +55,7 @@ I used to have my subversion configuration set so that vimdiff was always used, 
 
 This is the analog to [git-clean](http://www.kernel.org/pub/software/scm/git/docs/git-clean.html).  It removes any untracked or ignored files.
 
-This is indispensible for projects that generate a lot of build artifacts or times when there are several untracked items to delete.  It supports the `-n` flag to show what it would delete without doing so.
+This is indispensible for projects that generate a lot of build artifacts or times when there are several untracked items to delete.  Running it without additional options will show what files would be removed, and adding the `-f` flag will do the deleting.
 
 ## [svn fm](https://github.com/justone/dotfiles/blob/personal/bin/svn-fm) (fm = 'fix merge')
 
@@ -84,5 +84,7 @@ If all the conflicts are resolved, the conflict is marked as resolved.
 ## All done
 
 That's it for now.  Enjoy.
+
+**Update 2012-09-17:** Updated wording about `svn clean` behavior.  Default changed from deleting to showing what would be deleted and the option `-n` changed to `-f`.
 
 [^1]: The above links to his github, but I like the picture on his [homepage](http://mrwacky.com/) better.
