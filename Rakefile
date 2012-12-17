@@ -7,6 +7,7 @@ require "stringex"
 ssh_user       = "endot.org@endot.org"
 ssh_port       = "22"
 document_root  = "~/domains/endot.org/html/"
+rsync_delete   = false
 deploy_default = "rsync"
 
 # This will be configured for you when you run config_deploy
