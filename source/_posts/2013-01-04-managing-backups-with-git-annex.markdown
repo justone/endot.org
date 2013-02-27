@@ -30,7 +30,7 @@ To illustrate, here's how to get from nothing to tracking a file with git-annex:
 
 ```sh
 $ mkdir repo && cd repo
-$ git init && git commit -m initial --allow-emtpy
+$ git init && git commit -m initial --allow-empty
 Initialized empty Git repository in /Users/nate/repo/.git/
 [master (root-commit) c8562e6] initial
 $ git annex init main
