@@ -50,7 +50,7 @@ ENTRYPOINT ["rake"]
 
 ## How to use it
 
-To use this Dockerfile, I ran this command:
+To use this [Dockerfile](https://github.com/justone/endot.org/blob/master/Dockerfile), I put it at the root of my [blog source](https://github.com/justone/endot.org) and ran this command:
 
 ``` sh
 $ docker build -t ndj/octodock .
