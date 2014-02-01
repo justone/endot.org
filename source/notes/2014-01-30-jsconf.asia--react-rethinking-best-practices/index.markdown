@@ -1,11 +1,12 @@
 ---
-author: nate
 layout: page
-status: publish
-title: React - Rethinking Best Practices
-date: '2014-01-30 12:00:00'
+title: "Talk Notes: React - Rethinking Best Practices"
+date: 2014-01-30 21:03
+comments: true
+sharing: true
+footer: true
 tags:
-- talk
+- notes
 ---
 
 # Summary

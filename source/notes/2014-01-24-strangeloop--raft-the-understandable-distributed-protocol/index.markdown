@@ -1,11 +1,12 @@
 ---
-author: nate
 layout: page
-status: publish
-title: Raft - The Understandable Distributed Protocol
-date: '2014-01-24 12:00:00'
+title: "Talk Notes: Raft - The Understandable Distributed Protocol"
+date: 2014-01-24 21:03
+comments: true
+sharing: true
+footer: true
 tags:
-- talk
+- notes
 ---
 
 # Summary

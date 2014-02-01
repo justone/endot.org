@@ -1,11 +1,12 @@
 ---
-author: nate
 layout: page
-status: publish
-title: Using Datomic with Riak
-date: '2014-01-10 12:00:00'
+title: "Talk Notes: Using Datomic with Riak"
+date: 2014-01-10 21:03
+comments: true
+sharing: true
+footer: true
 tags:
-- talk
+- notes
 ---
 
 # Summary

@@ -6,7 +6,7 @@ footer: false
 
 <div id="blog-archives">
 {% for node in site.reverse_sorted_pages %}
-{% if node.tags contains 'talk' %}
+{% if node.tags contains 'notes' %}
 {% capture this_year %}{{ node.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
   {% assign year = this_year %}
