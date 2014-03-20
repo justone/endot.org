@@ -5,7 +5,10 @@ date: 2011-12-06 20:58
 comments: true
 categories: 
 - Programming
+- tmux
 ---
+
+**Update:** I refined my configuration.  See it [here](/2014/03/20/my-tmux-configuration-refined/).
 
 For the longest time, I was a [screen](http://www.gnu.org/s/screen/) user.  Then, a little while ago, I discovered [tmux](http://tmux.sourceforge.net/), the next generation terminal multiplexer.  Not only is it easier to search for on google, it has a rich and consistent configuration language.
 
