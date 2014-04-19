@@ -24,9 +24,9 @@ So I run tmux locally and remotely.
 
 I manage my nested tmux sessions with three configuration files.
 
-1. [.tmux.shared](https://github.com/justone/dotfiles/blob/personal/.tmux.shared) - contains configuration and bindings that are shared between my master and remote sessions
-2. [.tmux.master](https://github.com/justone/dotfiles/blob/personal/.tmux.master) - contains configuration unique to my local (master) session
-3. [.tmux.conf](https://github.com/justone/dotfiles/blob/personal/.tmux.conf) - contains configuration unique to the remote sessions
+1. [.tmux.shared](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared) - contains configuration and bindings that are shared between my master and remote sessions
+2. [.tmux.master](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.master) - contains configuration unique to my local (master) session
+3. [.tmux.conf](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.conf) - contains configuration unique to the remote sessions
 
 ## Shared configuration
 
@@ -34,9 +34,9 @@ Note: `bind -n` maps a key that works all the time, regular `bind` maps a key th
 
 The shared configuration contains three basic sections:
 
-1. [Vim-ish keybindings](https://github.com/justone/dotfiles/blob/personal/.tmux.shared#L3) - I set them whenever I can get them.  (-:
-2. [Misc. configuration](https://github.com/justone/dotfiles/blob/personal/.tmux.shared#L16) - One screen-compatible binding and one I'll highlight later.
-3. [Status bar configuration](https://github.com/justone/dotfiles/blob/personal/.tmux.shared#L24) - This I mostly copied from someone else.
+1. [Vim-ish keybindings](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared#L3) - I set them whenever I can get them.  (-:
+2. [Misc. configuration](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared#L16) - One screen-compatible binding and one I'll highlight later.
+3. [Status bar configuration](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared#L24) - This I mostly copied from someone else.
 
 ## Local configuration
 

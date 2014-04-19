@@ -8,7 +8,7 @@ categories:
 - git
 ---
 
-Most of the time, when looking at history in a git repository, I am most interested in changes at a higher level than an individual commit.  From time to time, however, I really want to look at each commit on its own.  So, I created [git-walklog](https://github.com/justone/dotfiles/blob/personal/bin/git-walklog).  For each commit in the range specified, it:
+Most of the time, when looking at history in a git repository, I am most interested in changes at a higher level than an individual commit.  From time to time, however, I really want to look at each commit on its own.  So, I created [git-walklog](https://github.com/justone/dotfiles-personal/blob/personal/bin/git-walklog).  For each commit in the range specified, it:
 
 1. Shows the standard log format: author, date, and commit message.  Then it waits for input.
 2. Hitting enter then runs `git difftool` on just that commit, showing you any differences in your configured difftool [^1].

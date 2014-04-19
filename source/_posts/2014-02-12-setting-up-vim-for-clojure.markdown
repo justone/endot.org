@@ -49,7 +49,7 @@ Enjoy.
 [7]: https://github.com/tpope/vim-sexp-mappings-for-regular-people
 [8]: https://github.com/tpope/vim-pathogen
 [9]: https://github.com/gmarik/Vundle.vim
-[10]: https://github.com/justone/dotfiles/blob/personal/.vimrc#L335-L339
+[10]: https://github.com/justone/dotfiles-personal/blob/personal/.vimrc#L335-L339
 [11]: https://github.com/justone/testclj
 [12]: http://leiningen.org/
 [13]: https://github.com/justone/testclj/blob/master/dev.clj

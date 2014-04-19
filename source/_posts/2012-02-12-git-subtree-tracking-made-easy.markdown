@@ -71,7 +71,7 @@ Enter url:
 
 Then all I had to do was find the right git repository online and paste the url in.  I usually accomplished this by searching for `github [pluginname]` and then appending `/commit/[short sha1]` to the url to see if the commit existed.  For instance, looking for `github tabular` led me to [https://github.com/godlygeek/tabular](https://github.com/godlygeek/tabular), and appending [/commit/b7b4d87](https://github.com/godlygeek/tabular/commit/b7b4d87) shows that the commit exists in that repository, so it's likely the right one.  For the plugins that aren't hosted by their authors on github or elsewhere, the [vim-scripts](https://github.com/vim-scripts) mirror was usually where I ended up.  The script can be run multiple times, it skips any subtrees that already have entries in `.gittrees`.
 
-After running the script for a while, and searching for all the home repositories for my subtrees, I ended up with [this .gittrees file](https://github.com/justone/dotfiles/blob/personal/.gittrees).
+After running the script for a while, and searching for all the home repositories for my subtrees, I ended up with [this .gittrees file](https://github.com/justone/dotfiles-personal/blob/personal/.gittrees).
 
 Now, if I want to list my subtrees:
 

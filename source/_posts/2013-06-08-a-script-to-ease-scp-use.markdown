@@ -10,7 +10,7 @@ categories:
 
 Since I work on remote systems all the time, I use SCP repeatedly to transfer files around.  One of the more cumbersome tasks is specifying the remote file or directory location.
 
-So I wrote a helper script to make it easier.  It's called [scptarget](https://github.com/justone/dotfiles/blob/personal/bin/scptarget), and it generates targets for SCP, either the source or the destination.
+So I wrote a helper script to make it easier.  It's called [scptarget](https://github.com/justone/dotfiles-personal/blob/personal/bin/scptarget), and it generates targets for SCP, either the source or the destination.
 
 For instance, if I want to copy a file down from a remote server, I run scptarget like this and copy the output:
 
@@ -70,7 +70,7 @@ $ vim scp://endot.org//home/nate/file.pl
 
 ## IP based targets
 
-Sometimes I need the target to use the IP of the server instead of its hostname.  This usually happens with development VMs (a la Vagrant), which are only addressable via IP.  Passing `-i` to scptarget causes it behave this way.  Under the hood, it uses [getip](https://github.com/justone/dotfiles/blob/personal/bin/getip), which is a script I wrote that prints out the first IP of the current host.  If there is no non-private IP, then it will return the first private IP.  (I am fully aware that there may be better ways of doing the above.  Let me know if you have a better script.)
+Sometimes I need the target to use the IP of the server instead of its hostname.  This usually happens with development VMs (a la Vagrant), which are only addressable via IP.  Passing `-i` to scptarget causes it behave this way.  Under the hood, it uses [getip](https://github.com/justone/dotfiles-personal/blob/personal/bin/getip), which is a script I wrote that prints out the first IP of the current host.  If there is no non-private IP, then it will return the first private IP.  (I am fully aware that there may be better ways of doing the above.  Let me know if you have a better script.)
 
 ``` sh
 $ scptarget path/to/file.pl

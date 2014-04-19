@@ -33,7 +33,7 @@ fi
 
 Once I had the wrapper, I started creating little extensions to subversion.  Here are the ones I've created.
 
-## [svn url](https://github.com/justone/dotfiles/blob/personal/bin/svn-url)
+## [svn url](https://github.com/justone/dotfiles-personal/blob/personal/bin/svn-url)
 
 This prints out the URL of the current checkout.
 
@@ -45,21 +45,21 @@ $ svn url | remotecopy
 
 Which means no mouse is needed.
 
-## [svn vd](https://github.com/justone/dotfiles/blob/personal/bin/svn-vd)
+## [svn vd](https://github.com/justone/dotfiles-personal/blob/personal/bin/svn-vd)
 
 This shows the uncommitted differences with [vimdiff](http://vimdoc.sourceforge.net/htmldoc/diff.html).
 
-Since subversion doesn't have native support for using external diff tools, this script uses [vimdiff.pl](https://github.com/justone/dotfiles/blob/personal/bin/vimdiff.pl) to add that in.
+Since subversion doesn't have native support for using external diff tools, this script uses [vimdiff.pl](https://github.com/justone/dotfiles-personal/blob/personal/bin/vimdiff.pl) to add that in.
 
 I used to have my subversion configuration set so that vimdiff was always used, but decided to add this script so that I could choose at the prompt which one I wanted (`svn di` for native, `svn vd` for vimdiff).
 
-## [svn clean](https://github.com/justone/dotfiles/blob/personal/bin/svn-clean)
+## [svn clean](https://github.com/justone/dotfiles-personal/blob/personal/bin/svn-clean)
 
 This is the analog to [git-clean](http://www.kernel.org/pub/software/scm/git/docs/git-clean.html).  It removes any untracked or ignored files.
 
 This is indispensible for projects that generate a lot of build artifacts or times when there are several untracked items to delete.  Running it without additional options will show what files would be removed, and adding the `-f` flag will do the deleting.
 
-## [svn fm](https://github.com/justone/dotfiles/blob/personal/bin/svn-fm) (fm = 'fix merge')
+## [svn fm](https://github.com/justone/dotfiles-personal/blob/personal/bin/svn-fm) (fm = 'fix merge')
 
 This makes it easy to fix merge conflicts by loading up the right files in vimdiff.
 

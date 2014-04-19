@@ -11,7 +11,7 @@ It's been over two years since I wrote remotecopy and I still use it every day.
 
 The most recently added feature is the `-c` option, which will remove the trailing newline from the copied data if it only contains one line.  I found myself writing little scripts that would only output one line with the intent of using that output to build a command line on a different system, and the extra newline at the end often messed up the new command.  The `-c` solves this problem.
 
-For instance, I have [git-url](https://github.com/justone/dotfiles/blob/personal/bin/git-url), which outputs the origin url of the current git repository.  This makes it easy to clone the repo on a new system (`rc` is my alias for `remotecopy -c`):
+For instance, I have [git-url](https://github.com/justone/dotfiles-personal/blob/personal/bin/git-url), which outputs the origin url of the current git repository.  This makes it easy to clone the repo on a new system (`rc` is my alias for `remotecopy -c`):
 
 ``` sh
 firsthost:gitrepo$ git url | rc

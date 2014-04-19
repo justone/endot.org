@@ -35,7 +35,7 @@ Another thing that I wanted to do from time to time was run two independent tmux
 
 The most recent modification I made was to add easy support for sharing a tmux session between two Terminal windows.  This allows me to treat my local Terminal windows as viewports into my tmux session tree, attaching where ever I need without necessarily detaching another Terminal window.
 
-To enable this, I added an optional command line flag to the session start scripts that makes tmux start a new view of the session instead of detaching other clients.  I also enabled '[aggressive-resize](https://github.com/justone/dotfiles/blob/personal/.tmux.shared#L17)' so that the size of the tmux sessions aren't limited to the smallest Terminal window unless more than one are looking at the exact same tmux window.
+To enable this, I added an optional command line flag to the session start scripts that makes tmux start a new view of the session instead of detaching other clients.  I also enabled '[aggressive-resize](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared#L17)' so that the size of the tmux sessions aren't limited to the smallest Terminal window unless more than one are looking at the exact same tmux window.
 
 ## How it all looks
 
@@ -49,16 +49,16 @@ It can look a little overwhelming, but in reality it's quite simple to use.  Mos
 
 The configuration for my set up is available in my dotfiles repository on Github:
 
-1. [.tmux.shared](https://github.com/justone/dotfiles/blob/personal/.tmux.shared) - contains shared configuration and bindings that are common to all levels
-2. [.tmux.uber](https://github.com/justone/dotfiles/blob/personal/.tmux.uber) - configuration unique to the top-level session
-4. [.tmux.master](https://github.com/justone/dotfiles/blob/personal/.tmux.master) - configuration unique to mid-level tmux sessions
-3. [.tmux.conf](https://github.com/justone/dotfiles/blob/personal/.tmux.conf) - configuration unique to the lowest-level (leaf) sessions
+1. [.tmux.shared](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.shared) - contains shared configuration and bindings that are common to all levels
+2. [.tmux.uber](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.uber) - configuration unique to the top-level session
+4. [.tmux.master](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.master) - configuration unique to mid-level tmux sessions
+3. [.tmux.conf](https://github.com/justone/dotfiles-personal/blob/personal/.tmux.conf) - configuration unique to the lowest-level (leaf) sessions
 
 ### Wrapper scripts
 
-The heart of the wrapper scripts is [tmux-sess](https://github.com/justone/dotfiles/blob/personal/bin/tmux-sess).  It holds all the logic for setting the socket and sharing sessions.
+The heart of the wrapper scripts is [tmux-sess](https://github.com/justone/dotfiles-personal/blob/personal/bin/tmux-sess).  It holds all the logic for setting the socket and sharing sessions.
 
-The rest of the scripts are thin wrappers around tmux-sess.  For instance, here is [tmux-uber](https://github.com/justone/dotfiles/blob/personal/bin/tmux-uber):
+The rest of the scripts are thin wrappers around tmux-sess.  For instance, here is [tmux-uber](https://github.com/justone/dotfiles-personal/blob/personal/bin/tmux-uber):
 
 ``` sh
 #!/bin/sh
@@ -66,7 +66,7 @@ The rest of the scripts are thin wrappers around tmux-sess.  For instance, here 
 tmux-sess -s uber -f ~/.tmux.uber $*
 ```
 
-The other level scripts are [tmux-home](https://github.com/justone/dotfiles/blob/personal/bin/tmux-home) for the mid-level session and [tmux-main](https://github.com/justone/dotfiles/blob/personal/bin/tmux-main) for the lowest-level.
+The other level scripts are [tmux-home](https://github.com/justone/dotfiles-personal/blob/personal/bin/tmux-home) for the mid-level session and [tmux-main](https://github.com/justone/dotfiles-personal/blob/personal/bin/tmux-main) for the lowest-level.
 
 ## Wrapping up
 
