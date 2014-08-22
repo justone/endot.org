@@ -59,7 +59,7 @@ go blocks give illusion of blocking in single threaded context, eliminates callb
 * Taking values from a channel
 * Selecting over multiple channels
 
-10 short examples of core.async (`https://github.com/cognitect/async-webinar`)
+10 short examples of core.async (<https://github.com/cognitect/async-webinar>)
 
 ### Example 1
 
@@ -100,8 +100,8 @@ Examples
 
 ## Other resources
 
-* Rich Hickey's original announcement - http://clojure.com/blog/2013/06/28/clojure-core-async-channels.html
-* Tim Baldrige Clojure/conj talk - https://www.youtube.com/watch?v=enwIIGzhahw
+* Rich Hickey's original announcement - <http://clojure.com/blog/2013/06/28/clojure-core-async-channels.html>
+* Tim Baldrige Clojure/conj talk - <https://www.youtube.com/watch?v=enwIIGzhahw>
 * Facebook's React
     * Om, Reagent, Quiescent, Reacl
 
