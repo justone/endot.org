@@ -16,7 +16,7 @@ tags:
     Speaker: David Nolen
     Date: 2014-08-22
 
-(web link available soon)
+<http://go.cognitect.com/core_async_webinar_recording>
 
 # Notes
 
