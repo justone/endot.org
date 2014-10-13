@@ -1,4 +1,4 @@
-FROM ubuntu:12.10
+FROM ubuntu:14.04
 MAINTAINER  Nate Jones <nate@endot.org>
 
 # instal system dependencies and ruby
