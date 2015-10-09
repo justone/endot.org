@@ -12,6 +12,8 @@ tags:
 
 ## Keynote
 
+[Video](https://www.youtube.com/watch?v=D5-ifl7KJ00)
+
 ### Freedom to innovate
 
 Scalability, large suite of services
@@ -151,6 +153,8 @@ Ambassador can also:
 # Day 2 - Thursday
 
 ## Keynote
+
+[Video](https://www.youtube.com/watch?v=uiDwqgXj5Q8)
 
 AWS well-architected framework. White paper.
 Four areas, dozen questions each area.
@@ -554,9 +558,360 @@ Lessons learned:
 * Monitor disk usage carefully
 * Deployment tooling is absolutely necessary
 
+## CMP301 - AWS Lambda and the Serverless Cloud
+
+Speaker: Tim Wagner
+
+Desc: With AWS Lambda you can easily build scalable microservices for mobile, web, and IoT applications or respond to events from other AWS services without managing infrastructure. In this session you’ll see demonstrations and hear more about newly launched features, as well as a recap of the languages, tools, and features added over the last several months. We’ll show you how to use Lambda to build mobile backends, create web, IoT, and voice-enabled apps, and extend both AWS and third party services by triggering Lambda functions – all without the need for servers or other infrastructure. We’ll also provide productivity and performance tips for getting the most out of your Lambda functions and show how cloud native architectures use Lambda to eliminate “cold servers” and excess capacity without sacrificing scalability or responsiveness.
+
+Overview of Lambda, why you would use it
+
+Use Lambda for processing incoming email in SES
+
+Now can use Lambda to process logs from CloudWatch Logs
+
+Python 2.7, available today, includes boto3
+
+Longer running functions: up to 5 minutes
+
+Scheduled jobs for checking external services (could use to check websites)
+
+New feature: versioning
+
+* Specified by number
+* Instead of "upload", you use "publish" to make an immutable copy
+    * automatically makes a version numbered version (1, 2, 3, etc.)
+    * also can create aliases
+
+IoT rules can call Lambda functions
+
+New feature: VPC Access
+
+* allows access to resources that are protected inside a VPC (RDS, ElastiCache, EC2)
+* VpcConfig config section in function definition
+    * includes subnet and security group ids
+
+<http://aws.amazon.com/blogs/compute>
+
+# Day 3 - Friday
+
+## STG406 - Using S3 to Build and Scale an Unlimited Storage Service for Millions of Consumers
+
+Speakers: Tarlochan Cheema (AWS), Kevin Christen (AWS)
+
+Desc: Amazon Cloud Drive's plans to provide a low cost, unlimited storage service presented a major engineering challenge. In this session, you learn how the Amazon Cloud Drive team designed and optimized the storage back-end, Amazon S3, to handle millions of users while containing infrastructure costs. In this session, the lead engineers share details of how they built the service for massive scale, and the regular steps they take to increase performance and efficiency. They also describe proven techniques for scaling and optimization, learned from experience.
+
+### What is Cloud Drive? - unlimited cloud storage for consumers
+
+* No free tier
+* Unlimited photos, 5G of space for other (free for Prime)
+* Unlimited everything
+
+For developers:
+
+* APIs
+* Mobile SDKs
+* Revenue sharing
+
+### Key challenges
+
+* Number of users
+* Number of files
+* Velocity of content
+* Metadata variety
+* indexing and querying
+* Logs
+
+### Design goals
+
+Typical for large scale data storage:
+
+scalable, durable, reliable, low latency, RESTful, low cost, etc.
+
+### Architecture
+
+* Main processing on EC2
+* S3 for content storage
+* DynamoDB for metadata
+* Transcoder, CloudSearch, SNS
+* Kinesis for feeding analysis systems
+
+### Use of S3
+
+* Content (main and derived)
+    * Standard storage
+    * Randomly generated keys (keeps load even across partitions)
+    * Server side encryption
+* Log files
+    * 800 servers running (peaking to 1000)
+    * 200G of logs an hour
+    * Archived by Timber log service
+    * Encrypts and stores in S3
+    * Types
+        * Application - time and severity stamped
+        * Service logs, per invocation - standard format across Amazon, source for metrics
+        * Wire logs
+        * No access logs
+    * Analysis = Instances -> S3 -> EMR -> S3 -> RedShift
+* Dynamic configuration (across the fleet)
+    * Heavy use of feature toggles (enable for test customers, % of customers, or on for everyone)
+    * Config files stored in S3
+    * Poll with GetObjectMetadata and reload file if ETag has changed
+* DynamoDB backups
+* They use the standard Java SDK
+
+### Challenges and design decision
+
+* 1: Upload size variation
+    * Text files to VM images
+    * Solution is size aware
+        * < 15M is just uploaded
+        * Use multipart upload to S3 for large files, using a threadpool
+* 2: Rapid upload availability
+    * Some content require processing
+    * Solution: use sync, async and optimistic sync processing
+        * Example: images - sync extract of exif
+        * Example: video - async transcoding to other formats
+        * Example: Document transformation to PDF - optimistic sync, or try sync with a timeout
+* 3: Intermiettent connections
+    * Uploads used to be in a single connection, not good for mobile devices
+    * Solution: ability to resume an upload
+        * Use HTTP Content-Range header
+        * Problem: Upload to S3 must be done with a single instance's credentials
+            * Switched to STS solution, could have done pre-signed urls
+            * Blog post: http://amzn.to/1FLeoii
+* 4: Download size variation
+    * Solution: size aware logic
+        * < 5M - simple get object, sync; covers 90% of files
+        * larger - parallel download logic using Apache HTTPClient, range requests
+* 5: Thumbnails of large images
+    * Most generated on the fly, at request time
+    * Large files are harder
+    * Solution: Another bucket as an infinite cache
+        * Save medium size to second bucket with expiration of 48 hours
+        * Create smaller size to serve
+        * Subsequent accesses use second bucket's copy
+        * Use metadata from request to generate key so you don't have to hit the DB
+* 6: Large direct downloads
+    * Downloading usually is done via the service as intermediary
+    * Large files with no transformations are hard
+    * Solution: Use an S3 presigned url
+
+### Takeaways
+
+* S3 is flexible
+* Selecting keys is important
+* Upload and Download strategies should vary based on file size
+* Network is unreliable. Retry, but only up to a limit.
+
+## DAT304 - Amazon RDS for MySQL: Best Practices
+
+Speaker: Abdul Sait (AWS), Kevin Rice (AirBnB)
+
+Desc: Learn how to monitor your database performance closely and troubleshoot database issues quickly using a variety of features provided by Amazon RDS and MySQL including database events, logs, and engine-specific features. You will also learn about the security best practices to use with Amazon RDS for MySQL as well as how to effectively move data between Amazon RDS and on-premises instances. Hear from Amazon RDS customer Airbnb about the best practices they have implemented in their RDS for MySQL architectures.
+
+New in RDS
+
+* Max size to 6T
+* Simplified Reserved instances
+* Encryption at rest, HIPAA compliance
+* Migration Service
+
+Strategies:
+
+* Create cross region snapshots
+    * Can keep a warm standby for DR
+    * Base for migration or testing data
+* Encryption at rest
+    * KMS, etc.
+* Database migration with minimal downtime
+    * Migration Service
+    * Cross version or cross engine
+    * Expressed as a task that can be reused in production
+* Conversion Tool
+* Design for cost
+    * GP2 storage - SSD, earn credits like T2
+        * get a larger storage, even when you don't need it
+    * Burst capacity
+
+From Airbnb
+
+* Doubling number of engineers every year
+* RDS stores most important data
+* sync_binlog=0 for performance reasons, would like it to be 1
+* Snapshots for data analytics, point in time restore to extract and then destroyed
+* System called Spinal Tap
+    * Binlog streaming
+    * Server watches the binlog and invalidates cache
+* DR - extreme scenario
+    * Back up with mysqldump to S3, pulled into a different account
+* Future work
+    * Cross region read replicas
+    * horizontal sharding
+    * Partitioning
+    * Aurora
+
+## SEC314-R - NEW LAUNCH! AWS Config/Config Rules: Use AWS Config Rules to Improve Governance over Configuration Changes to Your Resources (Repeat Session)
+
+Speaker: Prashant Prahlad (AWS)
+
+Desc: AWS Config enables you to discover what resources are used on AWS, understand how resources are configured and gives you unprecedented visibility into changes to configurations over time – all without disrupting end user productivity. With Config Rules, you can continuously evaluate whether changes to resources are compliant with policies. You can set up predefined rules, provided and managed by AWS, or author your own rules using Amazon Lambda, and these rules are evaluated whenever relevant resources are modified. You can use this visibility and control to assess and improve your security and compliance posture.
+
+We will dive deep into other new capabilities in AWS Config and cover how you can integrate with IT service management, configuration management, and other tools. In this session, we will look at:
+
+AWS Config Rules – how to create and use rules that govern configuration changes recorded by AWS Config.
+New capabilities in AWS Config – Usability changes, better controls and other enhancements
+Mechanisms to aggregate deep visibility across AWS to gain insights into your overall security and operational posture.
+This session is best suited for administrators, security-ops and developers with a focus on audit, security and compliance.
+
+Visibility is foundational for security
+
+* Either there is no visibility, just hope
+* Or a CMDB
+
+In the cloud, visibility is even more important because of the power of software
+
+Options:
+
+* Poll Describe APIs
+* Maintain infra to store results
+* Lots of duplicate data
+* Normalize formats
+
+AWS Config is just that:
+
+* Inventory of existing resources
+* Discovery of new resources
+* Record changes continuously
+* Notify when changes happen
+* Historical data as well
+
+Rules
+
+* Preconfigured
+* Custom rules via Lambda
+* Invoked continuously
+* Dashboard for visualizing compliance
+
+Getting started with Rules:
+
+* Open Config
+* Select type of resources to record
+* Create S3 bucket to deliver data to
+* Create SNS topic to send notifications
+* Grant access
+
+Multi region patterns:
+
+* SNS topic in each region
+* SQS in target region
+* Common bucket in target region
+
+Key Concepts:
+
+Configuration Item - a point in time representation of the configuration of the resource
+
+* Metadata - information about the configuration
+* Common Attributes - resource id, tags, type, arn
+* Relationships - how it is connected
+* Current Configuration - information specific to the resource
+* Related Events - cloudtrail event id
+
+Dashboard allows searching for resources and viewing each configuration item
+
+What can we do with Config Rules?
+
+* Managed rules - prebuilt rules, managed by AWS
+    * 7 to start, eg EBS volumes must be encrypted, EIPs must be attached, SGs should have no open ports, CloudTrail to be enabled.
+* Customer managed rules - self maintained rules, run in Lambda in your account
+    * Can use partner created rules too
+    * Can specify parameters, show up in rule creation
+    * Creation
+        * Create Lambda function
+        * Grant permissions to function (to write to Config)
+        * Configure the custom rule in Config
+
+Triggered in two ways:
+
+* Changes, scoped to a tag or resource type or resource id
+    * Evaluation is the result of applying a rule against a resource
+* Time
+
+Use Cases:
+
+* Security analysis
+* Audit compliance
+* Change management
+    * Can pipe changes into existing CMDB or use as a datasource for CMDBs
+* Troubleshooting
+* Discovery
+
+Adding rules are simple, can see result of applying rules and drill into resources.  Can also see what rules apply to which resources.
+
+Everything is available via CLI and API as well.
+
+Coverage:
+
+* EC2
+* EBS
+* VPC
+* CloudTrail
+* IAM support now
+
+Growing ecosystem
+
+Pricing: Only when recording configuration item ($0.003/CI)
+
+Config Rule: $2.00 per rule per month, with 20K evaluations per active rule (shared among all rules, like family plan). $0.0001 per evaluation after that.
+
 # Misc notes
+
+## Other talks to watch
+
+* ARC340 - Multi-tenant Application Deployment Models
+* DAT401 - Amazon DynamoDB Deep Dive: Schema Design, Indexing, JSON, Search, and More
+* DVO205 - Monitoring Evolution: From Flying Blind to Flying by Instrument
+* MBL302 - Building Scalable, Serverless Mobile and Internet of Things Back Ends
+* BDT209 - NEW LAUNCH! Amazon Elasticsearch Service for Real-time Data Analytics and Visualization
+
+* DVO209 - JAWS: The Monstrously Scalable Serverless Framework – AWS Lambda, Amazon API Gateway, and More!
+* GAM401 - Build a Serverless Mobile Game with Amazon Cognito, Lambda, and DynamoDB
+* STG403 - Amazon EBS: Designing for Performance
+* DVO202 - DevOps at Amazon: A Look at Our Tools and Processes
+
+* ARC310 - Amazon.com: Solving Amazon's Catalog Contention and Cost with Amazon Kinesis
+* CMP401 - Elastic Load Balancing Deep Dive and Best Practices
+* GAM402 - Turbine: A Microservice Approach to Three Billion Game Requests a Day
+* DEV310 - CI/CD of Services with Mocking and Resiliency Testing Using AWS
+
+* CMP307 - Using Spot Instances for Production Workloads
+* SEC304 - Architecting for HIPAA Compliance on AWS
+* STG401 - Amazon S3 Deep Dive and Best Practices
+* BDT318 - Netflix Keystone: How Netflix Handles Data Streams Up to 8 Million Events Per Second
+
+* DVO308 - Docker & ECS in Production: How We Migrated Our Infrastructure from Heroku to AWS
+* DVO304 - AWS CloudFormation Best Practices
+
+* SEC318 - AWS CloudTrail Deep Dive
+* BDT307 - Zero Infrastructure, Real-Time Data Collection, and Analytics
+
+* CMP302 - Amazon EC2 Container Service: Distributed Applications at Scale
+* LT119 - Python, Go, and the Cost of Concurrency in the Cloud
+
+* ARC309 - From Monolithic to Microservices: Evolving Architecture Patterns in the Cloud
+* SEC401 - Encryption Key Storage with AWS KMS at Okta
+
+* DEV301 - Automating AWS with the AWS CLI
+* SPOT203 - Fourth Annual Startup Launches, Hosted by Werner Vogels
+* CMP403 - AWS Lambda: Simplifying Big Data Workloads
+* ARC301 - Scaling Up to Your First 10 Million Users
+
+* DVO313 - Building Next-Generation Applications with Amazon ECS
 
 ## Interesting URLs
 
 * <http://engineering.remind.com/introducing-empire/>
 * <http://wiremock.org/>
+* <https://github.com/aws/aws-sdk-go/wiki/Getting-Started-Common-Examples>
+* <https://github.com/awslabs/aws-go-wordfreq-sample>
+* <https://github.com/spotify/luigi>
