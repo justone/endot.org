@@ -8,6 +8,11 @@ tags:
 - notes
 ---
 
+# Links
+
+* [Videos on Youtube](https://www.youtube.com/user/AmazonWebServices/videos) (organized into [playlists](https://www.youtube.com/user/AmazonWebServices/playlists))
+* [Slides on SlideShare](http://www.slideshare.net/AmazonWebServices/tag/reinvent2015)
+
 # Day 1 - Wednesday
 
 ## Keynote
