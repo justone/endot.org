@@ -104,6 +104,8 @@ NHL too.
 
 ## DVO317 - From Local Docker Development to Production Deployments
 
+[Video](https://www.youtube.com/watch?v=7CZFpHUPqXw)
+
 Speaker: Jérôme Petazzoni
 
 Desc: In this session, we will learn how to define and run multi-container applications with Docker Compose. Then, we will show how to deploy and scale them seamlessly to a cluster with Docker Swarm; and how Amazon EC2 Container Service (ECS) eliminates the need to install,operate, and scale your own cluster management infrastructure. We will also walk through some best practice patterns used by customers for running their microservices platforms or batch jobs. Sample code and Compose templates will be provided on GitHub afterwards.
@@ -282,6 +284,8 @@ Intel story
 
 ## DAT407 - Amazon ElastiCache: Deep Dive
 
+[Video](https://www.youtube.com/watch?v=4VfIINg9DYI)
+
 Speaker: Nate Wiger (AWS), Tom Kerr (Riot)
 
 Desc: Peek behind the scenes to learn about Amazon ElastiCache's design and architecture. See common design patterns of our Memcached and Redis offerings and how customers have used them for in-memory operations and achieved improved latency and throughput for applications. During this session, we review best practices, design patterns, and anti-patterns related to Amazon ElastiCache.
@@ -417,6 +421,8 @@ Leaderboards
 * They do memory optimization (see docs)
 
 ## CMP406 - Amazon ECS at Coursera: Powering a general-purpose near-line execution microservice, while defending against untrusted code
+
+[Video](https://www.youtube.com/watch?v=a45J6xAGUvA)
 
 Speaker: Brennan Saeta (Coursera), Frank Chen (Coursera)
 
@@ -597,6 +603,8 @@ New feature: VPC Access
 
 ## STG406 - Using S3 to Build and Scale an Unlimited Storage Service for Millions of Consumers
 
+[Video](https://www.youtube.com/watch?v=WRJhdhGzJVg)
+
 Speakers: Tarlochan Cheema (AWS), Kevin Christen (AWS)
 
 Desc: Amazon Cloud Drive's plans to provide a low cost, unlimited storage service presented a major engineering challenge. In this session, you learn how the Amazon Cloud Drive team designed and optimized the storage back-end, Amazon S3, to handle millions of users while containing infrastructure costs. In this session, the lead engineers share details of how they built the service for massive scale, and the regular steps they take to increase performance and efficiency. They also describe proven techniques for scaling and optimization, learned from experience.
@@ -706,6 +714,8 @@ scalable, durable, reliable, low latency, RESTful, low cost, etc.
 
 ## DAT304 - Amazon RDS for MySQL: Best Practices
 
+[Video](https://www.youtube.com/watch?v=eHg8LD5KNC0)
+
 Speaker: Abdul Sait (AWS), Kevin Rice (AirBnB)
 
 Desc: Learn how to monitor your database performance closely and troubleshoot database issues quickly using a variety of features provided by Amazon RDS and MySQL including database events, logs, and engine-specific features. You will also learn about the security best practices to use with Amazon RDS for MySQL as well as how to effectively move data between Amazon RDS and on-premises instances. Hear from Amazon RDS customer Airbnb about the best practices they have implemented in their RDS for MySQL architectures.
@@ -752,6 +762,8 @@ From Airbnb
     * Aurora
 
 ## SEC314-R - NEW LAUNCH! AWS Config/Config Rules: Use AWS Config Rules to Improve Governance over Configuration Changes to Your Resources (Repeat Session)
+
+[Video](https://www.youtube.com/watch?v=96K-cpttpYc)
 
 Speaker: Prashant Prahlad (AWS)
 
@@ -868,45 +880,45 @@ Config Rule: $2.00 per rule per month, with 20K evaluations per active rule (sha
 
 ## Other talks to watch
 
-* ARC340 - Multi-tenant Application Deployment Models
-* DAT401 - Amazon DynamoDB Deep Dive: Schema Design, Indexing, JSON, Search, and More
-* DVO205 - Monitoring Evolution: From Flying Blind to Flying by Instrument
-* MBL302 - Building Scalable, Serverless Mobile and Internet of Things Back Ends
-* BDT209 - NEW LAUNCH! Amazon Elasticsearch Service for Real-time Data Analytics and Visualization
+* ARC340 - Multi-tenant Application Deployment Models ([Video](https://www.youtube.com/watch?v=DMP0leGZpo4))
+* DAT401 - Amazon DynamoDB Deep Dive: Schema Design, Indexing, JSON, Search, and More ([Video](https://www.youtube.com/watch?v=ggDIat_FZtA))
+* DVO205 - Monitoring Evolution: From Flying Blind to Flying by Instrument ([Video](https://www.youtube.com/watch?v=d3xYujJ1qx8))
+* MBL302 - Building Scalable, Serverless Mobile and Internet of Things Back Ends ([Video](https://www.youtube.com/watch?v=GnaO-LwdSuU))
+* BDT209 - NEW LAUNCH! Amazon Elasticsearch Service for Real-time Data Analytics and Visualization ([Video](https://www.youtube.com/watch?v=s7dJESec_dY))
 
-* DVO209 - JAWS: The Monstrously Scalable Serverless Framework – AWS Lambda, Amazon API Gateway, and More!
-* GAM401 - Build a Serverless Mobile Game with Amazon Cognito, Lambda, and DynamoDB
-* STG403 - Amazon EBS: Designing for Performance
+* DVO209 - JAWS: The Monstrously Scalable Serverless Framework – AWS Lambda, Amazon API Gateway, and More! ([Video](https://www.youtube.com/watch?v=D_U6luQ6I90))
+* GAM401 - Build a Serverless Mobile Game with Amazon Cognito, Lambda, and DynamoDB ([Video](https://www.youtube.com/watch?v=JT2xOYOdUvM))
+* STG403 - Amazon EBS: Designing for Performance ([Video](https://www.youtube.com/watch?v=2wKgha8CZ_w))
 * DVO202 - DevOps at Amazon: A Look at Our Tools and Processes
 
-* ARC310 - Amazon.com: Solving Amazon's Catalog Contention and Cost with Amazon Kinesis
-* CMP401 - Elastic Load Balancing Deep Dive and Best Practices
-* GAM402 - Turbine: A Microservice Approach to Three Billion Game Requests a Day
-* DEV310 - CI/CD of Services with Mocking and Resiliency Testing Using AWS
+* ARC310 - Amazon.com: Solving Amazon's Catalog Contention and Cost with Amazon Kinesis ([Video](https://www.youtube.com/watch?v=9MZtBMjOFsQ))
+* CMP401 - Elastic Load Balancing Deep Dive and Best Practices ([Video](https://www.youtube.com/watch?v=91TAx4fmcxk))
+* GAM402 - Turbine: A Microservice Approach to Three Billion Game Requests a Day ([Video](https://www.youtube.com/watch?v=txJmBA4cdQM))
+* DEV310 - CI/CD of Services with Mocking and Resiliency Testing Using AWS ([Video](https://www.youtube.com/watch?v=sUsh3EnzKKk))
 
 * CMP307 - Using Spot Instances for Production Workloads
-* SEC304 - Architecting for HIPAA Compliance on AWS
-* STG401 - Amazon S3 Deep Dive and Best Practices
-* BDT318 - Netflix Keystone: How Netflix Handles Data Streams Up to 8 Million Events Per Second
+* SEC304 - Architecting for HIPAA Compliance on AWS ([Video](https://www.youtube.com/watch?v=g4XI4IIYVrw))
+* STG401 - Amazon S3 Deep Dive and Best Practices ([Video](https://www.youtube.com/watch?v=1TvJCLl9NNg))
+* BDT318 - Netflix Keystone: How Netflix Handles Data Streams Up to 8 Million Events Per Second ([Video](https://www.youtube.com/watch?v=Kc-7eIfaK04))
 
-* DVO308 - Docker & ECS in Production: How We Migrated Our Infrastructure from Heroku to AWS
-* DVO304 - AWS CloudFormation Best Practices
+* DVO308 - Docker & ECS in Production: How We Migrated Our Infrastructure from Heroku to AWS ([Video](https://www.youtube.com/watch?v=8zbbQkszP04))
+* DVO304 - AWS CloudFormation Best Practices ([Video](https://www.youtube.com/watch?v=fVMlxJJNmyA))
 
-* SEC318 - AWS CloudTrail Deep Dive
-* BDT307 - Zero Infrastructure, Real-Time Data Collection, and Analytics
+* SEC318 - AWS CloudTrail Deep Dive ([Video](https://www.youtube.com/watch?v=t0e-mz_I2OU))
+* BDT307 - Zero Infrastructure, Real-Time Data Collection, and Analytics ([Video](https://www.youtube.com/watch?v=ygHGPnAd0Uo))
 
-* CMP302 - Amazon EC2 Container Service: Distributed Applications at Scale
+* CMP302 - Amazon EC2 Container Service: Distributed Applications at Scale ([Video](https://www.youtube.com/watch?v=eun8CqGqdk8))
 * LT119 - Python, Go, and the Cost of Concurrency in the Cloud
 
-* ARC309 - From Monolithic to Microservices: Evolving Architecture Patterns in the Cloud
-* SEC401 - Encryption Key Storage with AWS KMS at Okta
+* ARC309 - From Monolithic to Microservices: Evolving Architecture Patterns in the Cloud ([Video](https://www.youtube.com/watch?v=C4c0pkY4NgQ))
+* SEC401 - Encryption Key Storage with AWS KMS at Okta ([Video](https://www.youtube.com/watch?v=pi4HTSrmzis))
 
-* DEV301 - Automating AWS with the AWS CLI
+* DEV301 - Automating AWS with the AWS CLI ([Video](https://www.youtube.com/watch?v=TnfqJYPjD9I))
 * SPOT203 - Fourth Annual Startup Launches, Hosted by Werner Vogels
-* CMP403 - AWS Lambda: Simplifying Big Data Workloads
-* ARC301 - Scaling Up to Your First 10 Million Users
+* CMP403 - AWS Lambda: Simplifying Big Data Workloads ([Video](https://www.youtube.com/watch?v=WWDHxy4zuqg))j
+* ARC301 - Scaling Up to Your First 10 Million Users ([Video](https://www.youtube.com/watch?v=vg5onp8TU6Q))
 
-* DVO313 - Building Next-Generation Applications with Amazon ECS
+* DVO313 - Building Next-Generation Applications with Amazon ECS ([Video](https://www.youtube.com/watch?v=xIc3WT6kAVw))
 
 ## Interesting URLs
 
