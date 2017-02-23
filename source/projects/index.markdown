@@ -56,6 +56,15 @@ works on Linux and Windows too.
 
 * Homepage: <https://github.com/holen-app/holen>
 
+<h2>envbox - secure, easy access to secret environment variables</h2>
+
+Envbox is a utility that makes it easy to manage environment variables like
+GITHUB_TOKEN.  There are quite a few tools that use these kinds of variables,
+and putting them into your environment in a secure way is difficult.  Envbox
+makes it easy.
+
+* Homepage: <https://github.com/justone/envbox>
+
 <h2>Smaller projects</h2>
 
 * [git_backup.pl](https://github.com/justone/git_backup) - easily backup with git
