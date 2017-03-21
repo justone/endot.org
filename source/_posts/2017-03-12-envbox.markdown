@@ -1,0 +1,116 @@
+---
+layout: post
+title: "envbox: keeping secret environment variables secure"
+date: 2017-03-12 21:30:53 +0000
+comments: true
+published: true
+categories: 
+- Computers
+---
+
+In my day to day work and evening and weekend side work, I do most almost all
+of my development working on remote systems.  This has a number of advantages
+that are for another post, but this post is about one of the limitations.
+
+Most developers have a tool belt that they're continually improving, and as
+I work on mine I come across commands - like [hub](https://hub.github.com/)
+- that require[^1] putting a secret value into an environment variable, usually for
+authentication.
+
+For instance, to use hub, I need to do something like this:
+
+```
+$ export GITHUB_TOKEN=ba92810bab08av0ab0157028bb
+$ alias git=hub
+$ git create username/repo
+$ git pull-request -o
+```
+
+If I were only running git/hub commands on my local desktop, I could put the
+environment variable export into my shell and be done with it.  But on any
+remote system, I only have these options:
+
+1. Run `export GITHUB_TOKEN=..` in my shell before any command that requires it.  This isn't good because the token is now in my history, and any command that I run has access to the value.
+1. Run each command that needs the token like this: `GITHUB_TOKEN=... git create ...`.  This solves the access issue, but it still pollutes my history.  It's also cumbersome to deal with when running many commands.
+1. Add the export to my [dotfiles](https://github.com/justone/dotfiles-personal).  This solves the history problem (and the "remembering to enter the variable" problem), but then my token is available to anyone that I share my dotfiles with.
+
+I wanted something that I could use to securely manage these kinds of
+environment variables while making it convenient to expose them to specific
+commands.  So I wrote [envbox](https://github.com/justone/envbox).
+
+Envbox is written in Go, primarily because the language is quite suitable for
+these sorts of problems, but also because there's
+a [NaCl secretbox](https://nacl.cr.yp.to/secretbox.html) implementation in the
+Go ["Sub Repositories"](https://github.com/golang/go/wiki/SubRepositories), and
+I thought it was a good fit for this problem.
+
+## Usage
+
+After installation (instructions in the
+[README](https://github.com/justone/envbox/blob/master/README.md)), the first
+step is to set up envbox by generating a key:
+
+```
+$ envbox key generate -s
+c348603fe1a708277666222a1e549b7c02b22419b3cfe44d0dd5800b3da27b56
+```
+
+This key is used to encrypt each of the environment variables.  Next up is to add a new environment variable:
+
+```
+$ envbox add -n GITHUB_TOKEN
+value: aeijfalsjiegliasjefliajsefljaef
+$ envbox list
+GITHUB_TOKEN=aeijfalsjiegliasjefliajsefljaef
+```
+
+Then, when running a command that needs the variable:
+
+```
+$ envbox run -e GITHUB_TOKEN -- bash -c 'echo $GITHUB_TOKEN'
+aeijfalsjiegliasjefliajsefljaef
+```
+
+Or, more apropos for the above example:
+
+```
+alias git='envbox run -e GITHUB_TOKEN -- hub'
+```
+
+## Storage
+
+Envbox stores each variable in its own file on disk:
+
+```
+$ hexdump -C ~/.local/share/envbox/7ebac232c337c78af91cc4341d650a90a9044d0b259059e8.envenc
+00000000  79 80 8b 0d e2 9c c1 85  0c 36 1c bb 6c 94 f6 3c  |y........6..l..<|
+00000010  25 55 fb c1 00 3a 6c 3e  e4 b7 ad c3 bc cf a5 75  |%U...:l>.......u|
+00000020  76 57 cb 23 c2 91 13 20  79 df 9d d8 72 89 05 26  |vW.#... y...r..&|
+00000030  90 d5 f1 9e 05 26 51 fb  f5 fd 3d d9 65 fa 3d b9  |.....&Q...=.e.=.|
+00000040  79 ee 35 7e 6a 83 8e fd  32 56 9e f1 f7 1d ef 23  |y.5~j...2V.....#|
+00000050  05 03 a2 3c cc f0 6b 8d  cc 08 31 8c f2 d2 c1 a1  |...<..k...1.....|
+00000060  72 33 6e 48 59 87 b5 8b  82 b3 1a b3 e3 d7 98 8c  |r3nHY...........|
+00000070  d8 a3 c0 04 f0 f5 c1 53  06 84 14 b7 ee 45 c0 de  |.......S.....E..|
+00000080  82 a2                                             |..|
+00000082
+```
+
+Currently, the key is stored in a permission-restricted file in your home
+directory so that envbox can decrypt the files, but the plan is to move to
+a credential cache system like the one [git uses](https://git-scm.com/docs/git-credential-cache),
+so that the key is only held in memory for a configurable time.  This makes
+a better tradeoff between security and convenience.
+
+## Summary
+
+There are a few other things that envbox can do, such as accepting multi-line
+variables and differentiating the envbox name from the variable name, so that
+several of the same variable (e.g. two different GITHUB_TOKENs) can be
+tracked.
+
+I've found it to be incredibly useful, allowing me to version and distribute my
+secret variables while keeping them secure.
+
+Enjoy.
+
+[^1]: hub doesn't actually require the environment variable, but logging in for every push and pull seems a bit inefficient.
