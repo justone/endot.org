@@ -6,6 +6,7 @@ comments: true
 published: true
 categories: 
 - Computers
+- CLI
 ---
 
 In my day to day work and evening and weekend side work, I do most almost all
