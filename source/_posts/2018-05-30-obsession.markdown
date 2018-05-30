@@ -4,6 +4,8 @@ title: "Obsessing over multiple projects"
 date: 2018-05-30 15:27:22 +0000
 comments: true
 categories:
+- Programming
+- Vim
 ---
 
 In my new job, I've switched each project being a unique combination of git repositories[^1] to all projects being in just a few repositories.
