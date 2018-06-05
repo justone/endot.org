@@ -1,0 +1,43 @@
+---
+layout: post
+title: "Why Go: Built-in Concurrency"
+date: 2018-06-04 20:23:28 -0700
+comments: true
+categories:
+---
+
+Over the past few years, I've seen two different languages rise to the top of
+my preference list.  One of them is [Go](https://golang.org/)[^1].
+
+I've written a handful of [useful utilities](/projects/) in Go, and there are
+quite a few notable projects using it as well.  There are a few different
+reasons for why I've grown to favor it, and I'll start off with its built-in
+support for concurrency.
+
+Outside a bit of early Java, most of my career has been in the scripting
+languages.  I started off with PHP, did several years of Perl and then
+progressed mostly to Python.  I always studiously avoided any
+concurrent programming in those languages, because of the dragon-sized warnings
+and awkward interfaces that welcomed anyone foolish enough to venture those
+paths.  I know that it's *possible* to write concurrent code in the P*
+languages, but I am doubtful that I would be able to maintain such code and
+still like programming. I also dabbled a bit in Scala, and enjoyed the
+lock-less-ness of its actor model (primarily via (Akka)[https://akka.io/]).
+
+When I met Go around 5 or 6 years ago, I quickly grew to like it's simple
+syntax and quick compile times.  But then I discovered it's concurrency model.
+It's formally known as CSP ([Communicating Sequential Processes](https://en.wikipedia.org/wiki/Communicating_sequential_processes)),
+but to practical people it's made up of channels and lightweight processes.
+It's easy to wire up several processes that are connected by channels and work
+on a problem concurrently.
+
+The model is so simple that I've had concurrent code work the first time more
+than once.
+
+I've also been able to use Go's concurrency as an extension point.  In my
+[Personal Message Bus](https://github.com/justone/pmb) project, I abstract the
+underlying bus (Rabbit) behind a pair of channels, one for sending and one for
+receiving.  This made adding new functionality relatively easy and made it
+possible for me to refactor the underlying code and add other backends.
+
+[^1]: The other is Clojure.  I hope to talk more about that one later.
