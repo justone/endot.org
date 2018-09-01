@@ -4,7 +4,7 @@ title: "envbox: keeping secret environment variables secure"
 date: 2017-03-12 21:30:53 +0000
 comments: true
 published: true
-categories: 
+categories:
 - Computers
 - CLI
 ---
@@ -100,7 +100,8 @@ Currently, the key is stored in a permission-restricted file in your home
 directory so that envbox can decrypt the files, but the plan is to move to
 a credential cache system like the one [git uses](https://git-scm.com/docs/git-credential-cache),
 so that the key is only held in memory for a configurable time.  This makes
-a better tradeoff between security and convenience.
+a better tradeoff between security and convenience. **Update:** Now envbox can
+use your OS's native store, see [here](/2018/09/01/envbox-key-storage/).
 
 ## Summary
 
